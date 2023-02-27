@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import './weather.css';
 import { useState } from 'react';
 import axios from 'axios';
 import Loader from 'react-loader-spinner';
@@ -41,9 +42,8 @@ function Weather() {
       'Saturday',
     ];
     const currentDate = new Date();
-    const date = `${days[currentDate.getDay()]} ${currentDate.getDate()} ${
-      months[currentDate.getMonth()]
-    }`;
+    const date = `${days[currentDate.getDay()]} ${currentDate.getDate()} ${months[currentDate.getMonth()]
+      }`;
     return date;
   };
 
@@ -54,7 +54,6 @@ function Weather() {
       setWeather({ ...weather, loading: true });
       const url = 'https://api.openweathermap.org/data/2.5/weather';
       const appid = 'f00c38e0279b7bc85480c3fe775d518c';
-      //console.log('Enter');
 
       await axios
         .get(url, {
